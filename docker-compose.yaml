@@ -33,7 +33,7 @@ services:
     tty: true
     build: ./ati2-lab-front
     environment:
-      - API_BASE_URL=http://web
+      - API_BASE_URL=http://localhost:8000
     ports:
       - 3000:3000
     depends_on:
