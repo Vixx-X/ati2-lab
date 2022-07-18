@@ -4,9 +4,9 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_DB=ati-lab
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=ati-lab-1337*
+      - POSTGRES_DB=ati2-lab
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
   api:
     stdin_open: true
     tty: true
@@ -15,10 +15,10 @@ services:
       - DJANGO_SETTINGS_MODULE=back.settings.dev
       - SECRET_KEY=<SECRET_KEY>
       - ALLOWED_HOSTS=*
-      - DATABASE_NAME=ati2_lab_back
+      - DATABASE_NAME=ati2-lab
       - DATABASE_USER=admin
       - DATABASE_PASSWORD=1234
-      - DATABASE_HOST=localhost
+      - DATABASE_HOST=db
       - DATABASE_PORT=
       - EMAIL_HOST=<MAIL_HOST>
       - EMAIL_HOST_USER=<EMAIL>
@@ -38,5 +38,4 @@ services:
       - 3000:3000
     depends_on:
       - api
-
 
