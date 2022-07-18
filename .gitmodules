@@ -1,0 +1,6 @@
+[submodule "ati2-lab-back"]
+	path = ati2-lab-back
+	url = https://github.com/Vixx-X/ati2-lab-back.git
+[submodule "ati2-lab-front"]
+	path = ati2-lab-front
+	url = https://github.com/Vixx-X/ati2-lab-front.git
