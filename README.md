@@ -23,6 +23,7 @@ docker-compose up -d
 And then, when it all finished, you should be able to open up the project on this urls:
 
 Front : [http://localhost:3000](http://localhost:3000)
+
 Back : [http://localhost:8000](http://localhost:8000)
 
 ## Remove project
@@ -30,4 +31,3 @@ Back : [http://localhost:8000](http://localhost:8000)
 ```bash
 docker-compose down
 ```
-
