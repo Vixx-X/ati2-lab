@@ -12,7 +12,7 @@ services:
     tty: true
     build: ./ati2-lab-back
     volumes:
-      - .env:/code/back/back/settings/.env
+      - .env:/code/back/settings/.env
     ports:
       - 8000:8000
     depends_on:
