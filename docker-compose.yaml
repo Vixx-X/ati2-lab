@@ -3,14 +3,16 @@ version: "3.9"
 services:
   db:
     image: postgres
-    env_file:
-      - .env
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
   api:
     stdin_open: true
     tty: true
     build: ./ati2-lab-back
-    env_file:
-      - .env
+    volumes:
+      - .env:/code/back/back/settings/.env
     ports:
       - 8000:8000
     depends_on:
@@ -19,8 +21,8 @@ services:
     stdin_open: true
     tty: true
     build: ./ati2-lab-front
-    env_file:
-      - .env
+    volumes:
+      - .env:/code/.env.local
     ports:
       - 3000:3000
     depends_on:

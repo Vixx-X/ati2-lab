@@ -18,6 +18,8 @@ Make sure you have installed docker-compose ([See how](https://docs.docker.com/c
 
 Make sure there is no other service running on port 3000 or 8000.
 
+Please copy `env` into `.env`, and change it values accordingly to your settings.
+
 ## Run docker-compose
 
 To run the project, you will need to do this command:
