@@ -3,27 +3,14 @@ version: "3.9"
 services:
   db:
     image: postgres
-    environment:
-      - POSTGRES_DB=ati2-lab
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=1234
+    env_file:
+      - .env
   api:
     stdin_open: true
     tty: true
     build: ./ati2-lab-back
-    environment:
-      - DJANGO_SETTINGS_MODULE=back.settings.dev
-      - SECRET_KEY=<SECRET_KEY>
-      - ALLOWED_HOSTS=*
-      - DATABASE_NAME=ati2-lab
-      - DATABASE_USER=admin
-      - DATABASE_PASSWORD=1234
-      - DATABASE_HOST=db
-      - DATABASE_PORT=
-      - EMAIL_HOST=<MAIL_HOST>
-      - EMAIL_HOST_USER=<EMAIL>
-      - EMAIL_HOST_PASSWORD=<PASSWORD>
-      - PHONENUMBER_DEFAULT_REGION=VE
+    env_file:
+      - .env
     ports:
       - 8000:8000
     depends_on:
@@ -32,8 +19,8 @@ services:
     stdin_open: true
     tty: true
     build: ./ati2-lab-front
-    environment:
-      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+    env_file:
+      - .env
     ports:
       - 3000:3000
     depends_on:
